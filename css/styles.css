@@ -1,35 +1,38 @@
 :root {
-  --color-principal: rgb(
-    88,
-    88,
-    88
-  ); /* naranja vibrante (apetitoso y energético) */
-  --color-rosado-pastel: #ffd8a9; /* durazno pastel suave */
-  --color-rosado-coral: #ff9f68; /* coral anaranjado (alegre sin ser rosa fuerte) */
-  --color-rosado-medio: #ff774b; /* naranja suave tirando a coral */
-  --color-rosado-viejo: #d46a4c; /* ladrillo cálido y acogedor */
-  --color-melocoton-claro: #fff3e2; /* melocotón muy claro para fondos o detalles */
+  --color-principal: #050d01; /* Gris oscuro elegante para base */
+
+  /* Colores vibrantes tipo comida rápida */
+  --color-amarillo-mostaza: #ffc300; /* Mostaza intensa */
+  --color-rojo-tomate: #ff3b30; /* Rojo apetitoso */
+  --color-naranja-queso: #ff9500; /* Naranja tipo queso cheddar */
+  --color-verde-lechuga: #28a745; /* Verde fresco */
+  --color-crema-pan: #fff4e6; /* Beige claro tipo pan */
 
   /* Tipografía */
   --fuente-principal: "Montserrat", sans-serif;
 
-  /* Tamaños */
+  /* Tamaños */
   --navbar-height: 17vh;
   --navbar-brand-width: 100px;
   --navbar-brand-height: 75px;
   --titulo-principal: 3rem;
   --parrafo: 1.25rem;
 
-  /* Sombra */
-  --sombra-principal: 0 0 25px white, 0 0 8px rgba(248, 247, 243, 0.996);
+  /* Sombra cálida para comida */
+  --sombra-principal: 0 0 15px var(--color-naranja-queso),
+    0 0 30px var(--color-naranja-queso);
 
-  /* Nuevos colores faltantes */
+  /* Textos */
   --color-texto: #ffffff;
-  --color-texto-hover: #ffc1cc;
-  --color-hover: #f88379;
+  --color-texto-hover: var(--color-amarillo-mostaza);
+  --color-hover: var(--color-rojo-tomate);
+
+  /* Footer */
   --color-footer: #2b2b2b;
   --color-footer-text: #f1f1f1;
-  --color-box-shadow: rgba(255, 255, 255, 0.2);
+
+  /* Box shadow */
+  --color-box-shadow: rgba(255, 149, 0, 0.4);
 }
 
 /* ==========================
@@ -107,6 +110,43 @@
   transition: color 0.3s ease;
   color: black;
   /* border-bottom: 2px solid black; */
+  /* Efecto neon opcional */
+  &.neon-effect {
+    color: var(--color-amarillo-mostaza);
+    text-shadow: 0 0 5px var(--color-amarillo-mostaza),
+      0 0 10px var(--color-amarillo-mostaza),
+      0 0 20px var(--color-amarillo-mostaza),
+      0 0 40px var(--color-naranja-queso), 0 0 80px var(--color-naranja-queso);
+    animation: neon-flicker 1.5s infinite alternate;
+  }
+}
+
+/* Efecto neon general para cualquier texto */
+.neon-effect {
+  color: var(--color-amarillo-mostaza);
+  text-shadow: 0 0 5px var(--color-amarillo-mostaza),
+    0 0 10px var(--color-amarillo-mostaza),
+    0 0 20px var(--color-amarillo-mostaza), 0 0 40px var(--color-naranja-queso),
+    0 0 80px var(--color-naranja-queso);
+  animation: neon-flicker 1.5s infinite alternate;
+}
+
+@keyframes neon-flicker {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 5px var(--color-amarillo-mostaza),
+      0 0 10px var(--color-amarillo-mostaza),
+      0 0 20px var(--color-amarillo-mostaza),
+      0 0 40px var(--color-naranja-queso), 0 0 80px var(--color-naranja-queso);
+  }
+  50% {
+    opacity: 0.85;
+    text-shadow: 0 0 2px var(--color-amarillo-mostaza),
+      0 0 4px var(--color-amarillo-mostaza),
+      0 0 8px var(--color-amarillo-mostaza), 0 0 20px var(--color-naranja-queso),
+      0 0 40px var(--color-naranja-queso);
+  }
 }
 
 .tituloPrincipal:hover {
