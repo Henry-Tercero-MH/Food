@@ -1,5 +1,9 @@
 :root {
-  --color-principal: #ff6b00; /* naranja vibrante (apetitoso y energético) */
+  --color-principal: rgb(
+    88,
+    88,
+    88
+  ); /* naranja vibrante (apetitoso y energético) */
   --color-rosado-pastel: #ffd8a9; /* durazno pastel suave */
   --color-rosado-coral: #ff9f68; /* coral anaranjado (alegre sin ser rosa fuerte) */
   --color-rosado-medio: #ff774b; /* naranja suave tirando a coral */
